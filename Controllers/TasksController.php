@@ -14,7 +14,7 @@ class TasksController extends AbstractController
         $username = $_POST['username'];
         $email = $_POST['email'];
         $this->model->insertData($description, $username, $email);
-        header('Location: /beejeetestproject');
+        header('Location: /');
     }
 
     public function updateTask()
@@ -23,7 +23,7 @@ class TasksController extends AbstractController
         $description = $_POST['description'];
         $id = $_POST['rowId'];
         $this->model->updateData($id, $description,$isDone);
-        header('Location: /beejeetestproject');
+        header('Location: /');
     }
 
     public function login(){
@@ -34,13 +34,13 @@ class TasksController extends AbstractController
         {
             $_SESSION['isAdmin'] = 1;
         }
-        header('Location: /beejeetestproject');
+        header('Location: /');
     }
 
     public function logout()
     {
         $_SESSION['isAdmin'] = 0;
-        header('Location: /beejeetestproject');
+        header('Location: /');
     }
 
     private function isAdmin()
